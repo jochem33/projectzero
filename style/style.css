@@ -1,3 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    background-color: white;
+}
+
 .overlay-menu {
-    
+    background-color: whitesmoke;
+    width: 80vw;
+    height: 90vh;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 15vw;
+}
+
+.overlay-menu-header {
+    background-color: #4B0082;
+    height: 10vh;
+    width: 80vw;
+    border-radius: 15vw 15vw 0 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overlay-menu-header-close-button {
+    color: white;
+    font-size: 11vh;
+    font-family: 'Varela Round', "Ariel Rounded";
+
+    margin-right: 7vw;
+    position: relative;
+    top: -2vh;
+
+    font-weight: bold;
+}
+
+
+.overlay-item {
+    width: 70vw;
+    margin: auto;
+    margin-top: 5vw;
+    margin-top: 5vw;
+
+    border: 4px solid white;
+    border-radius: 3vw;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.overlay-dropdown {
+    position: relative;
+}
+
+.overlay-dropdown > select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #4B0082;
+    border: 4px solid white;
+    border-radius: 3vw;
+}
+
+/* style arrow */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* style arrow when opened */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style selected option */
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    /* border-color: transparent transparent #4B0082 transparent; */
+    /* background-color: #6F349B; */
+    cursor: pointer;
+}
+
+/* style options */
+.select-items {
+    position: absolute;
+    background-color: #4B0082;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 1px solid transparent;
+    border-radius: 3vw;
+}
+
+.select-hide {
+    display: none;
+  }
+  
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
 }
