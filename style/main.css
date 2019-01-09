@@ -1,0 +1,22 @@
+.content.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  padding: .5rem;
+  height: 500px;
+}
+.content.flex p {
+  max-width: 80vw;
+  text-align: center;
+  font-size: 30px;
+  margin: .25rem;
+  padding: .25rem;
+  display: block;
+  float: left;
+  clear: both;
+}
+.button {
+  color: #4B0082;
+}
