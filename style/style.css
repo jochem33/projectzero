@@ -3,3 +3,16 @@
 body {
     background-color: white;
 }
+
+header{
+    background-color: #4B0082;
+    width: 100%;
+    text-align: center;
+    font-family: 'Varela Round', 'Roboto';
+}
+
+header h1{
+    margin: 0%;
+    padding: 5%;
+    color: white;
+}
