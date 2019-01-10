@@ -11,6 +11,7 @@ body {
     margin: auto;
     margin-top: 5vh;
     border-radius: 15vw;
+    justify-content: center;
 }
 
 .overlay-menu-header {
@@ -47,6 +48,53 @@ body {
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.overlay-buttondiv {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+
+    padding: 5vw 0 5vw 0; 
+}
+
+
+.overlay-submitbutton {
+    background-color: #4B0082;
+    text-align: center;
+    padding: 3vw;
+    color: white;
+    width: 50vw;
+    margin: auto;
+}
+
+.overlay-submitbutton:hover .overlay-submitbutton:active {
+    background-color: #6F349B;
+}
+
+
+
+
+.overlay-textinput {
+    background-color: #4B0082;
+}
+
+.overlay-textinput > input:focus {
+    background-color: #6F349B;
+    border-radius: 2vw;
+    border: none;
+}
+
+.overlay-textinput > input {
+    text-align: right;
+    color: white;
+    width: 97%;
+    background-color: transparent;
+    border: none;
+    padding: 1vw;
+    font-family: 'Varela Round', "Ariel Rounded";
+}
+
+
 
 
 .overlay-dropdown {
