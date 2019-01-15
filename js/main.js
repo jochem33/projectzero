@@ -6,3 +6,17 @@ function addMustsee() {
     input.placeholder = "tap to type location"
     mustSeeItems.appendChild(input);
 }
+
+
+function showGenerateOverlay() {
+    document.getElementById("overlay-menu").style.display = "block";
+
+    console.log("generate shown");
+}
+
+
+function hideGenerateOverlay() {
+    document.getElementById("overlay-menu").style.display = "none";
+
+    console.log("generate hidden");
+}

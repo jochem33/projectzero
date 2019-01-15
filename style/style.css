@@ -6,14 +6,21 @@ body {
 }
 
 .overlay-menu {
+    z-index: 10000;
+    float: left;
+    display: none;
     background-color: whitesmoke;
     width: 80vw;
     height: 90vh;
-    margin: auto;
-    margin-top: 5vh;
+    margin: 5vh 10vw 0 10vw;
+    /* margin-top: 5vh; */
     border-radius: 15vw;
     justify-content: center;
     overflow: scroll;
+    position: absolute;
+    box-shadow: 0 0 100vw rgba(0, 0, 0, 1);
+    /*  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) */
+
 }
 
 .overlay-menu-header {
@@ -217,7 +224,7 @@ body {
 
 
 body {
-    height: 86.5vh;
+    height: 100vh;
     background-color: white;
     overflow-x: hidden;
 }
@@ -227,7 +234,7 @@ section{
 }
 
 header{
-    float: left;
+    position: fixed;
     background-color: #4B0082;
     width: 100%;
     text-align: center;
@@ -280,30 +287,39 @@ header h1{
     overflow-x: hidden;
     width: 100%;
     min-height: 100%;
-    background-color: grey;
     overflow-x: auto;
 }
 
-.middel .circle{
+.circle{
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 15vw;
+    height: 15vw;
     border-radius: 50%;
     background-color: #8800EB;
     justify-content: center;
     align-items: center;
+
+    margin: auto;
+    margin-top: 5vw;
+    margin-top: 5vw;
+
+    border: 4px solid white;
+    border-radius: 50%;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.middel .buttonsLeft{
+.buttonContainer {
+    width: 100vw;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
+.buttons {
+    margin: 2vw;
+}
 
-
-.middel .buttonsRight{
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+.buttonicon {
+    width: 13vw;
 }
