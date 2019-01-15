@@ -2,6 +2,7 @@
 
 body {
     background-color: white;
+    font-family: 'Varela Round', "Ariel Rounded";
 }
 
 .overlay-menu {
@@ -12,6 +13,7 @@ body {
     margin-top: 5vh;
     border-radius: 15vw;
     justify-content: center;
+    overflow: scroll;
 }
 
 .overlay-menu-header {
@@ -67,8 +69,12 @@ body {
     margin: auto;
 }
 
-.overlay-submitbutton:hover .overlay-submitbutton:active {
-    background-color: #6F349B;
+.overlay-submitbutton:hover {
+    background-color: #8800EB;
+}
+
+.overlay-submitbutton:active {
+    background-color: #8800EB;
 }
 
 
@@ -79,7 +85,7 @@ body {
 }
 
 .overlay-textinput > input:focus {
-    background-color: #6F349B;
+    background-color: #8800EB;
     border-radius: 2vw;
     border: none;
 }
@@ -135,7 +141,7 @@ body {
     padding: 8px 16px;
     border: 1px solid transparent;
     /* border-color: transparent transparent #4B0082 transparent; */
-    /* background-color: #6F349B; */
+    /* background-color: #8800EB; */
     cursor: pointer;
 }
 
@@ -157,4 +163,50 @@ body {
   
 .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.overlay-mustsee {
+    background-color: #4B0082;
+}
+
+.overlay-mustsee-header {
+    color: white;
+}
+
+.overlay-mustsee-header-text {
+    margin: 1vw;
+}
+
+.overlay-mustsee-header-plus {
+    color: white;
+    background-color: #8800EB;
+    border-radius: 50vw;
+    width: 5vw;
+    height: 5vw;
+    display: block;
+    text-align: center;
+    float: right;
+    position: relative;
+    top: -6vw;
+    right: 1vw;
+}
+
+.must-see-items {
+    max-height: 50vw;
+    /* overflow: scroll; */
+}
+
+.overlay-must-see-input {
+    color: white;
+    width: 97%;
+    background-color: transparent;
+    border: none;
+    padding: 1vw;
+    margin: 0 0 2vw 0;
+    font-family: 'Varela Round', "Ariel Rounded";
+    background-color: #8800EB;
 }

@@ -7,6 +7,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="style/normalize.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <section>
@@ -15,6 +16,12 @@
                     <a class="overlay-menu-header-close-button">x</a>
                 </div>
                 <form action="" method="post">
+                    <div class="overlay-item overlay-textinput">
+                        <input type="text" name="" id="" placeholder="Starting point">
+                    </div>
+                    <div class="overlay-item overlay-textinput">
+                        <input type="text" name="" id="" placeholder="End point">
+                    </div>
                     <div class="overlay-dropdown overlay-item">
                         <select>
                             <option value="0">Route mood:</option>
@@ -36,8 +43,14 @@
                             <option value="3">5 hours</option>
                         </select>
                     </div>
-                    <div class="overlay-item overlay-textinput">
-                        <input type="text" name="" id="" placeholder="AAAaaaaa">
+                    <div class="overlay-mustsee overlay-item">
+                        <div class="overlay-mustsee-header">
+                            <p class="overlay-mustsee-header-text">Must See</p>
+                            <a class="overlay-mustsee-header-plus" onclick="addMustsee()">+</a>
+                        </div>
+                        <div id="must-see-items">
+                            
+                        </div>
                     </div>
                     <div class="overlay-buttondiv">
                         <button type="submit" class="overlay-item overlay-submitbutton">Generate</button>
@@ -45,6 +58,8 @@
                 </form>
             </div>
         </section>
+        <script src="js/main.js"></script>
+
         <script src="js/dropwdown.js"></script>
     </body>
 </html>
