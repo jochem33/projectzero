@@ -339,18 +339,17 @@ src: url("../style/fonts/Sonorous.otf");
 src: url("../style/fonts/sonorous-webfont.woff") format("woff");
 
 }
-.content.flex {
+
+.content {
+    margin: 0 auto;
+    width: 350px;
+    padding: .75rem;
     justify-content: center;
     align-items: center;
     height: 100vh;
     display: table;
 }
-.content {
-    margin: 0 auto;
-    width: 350px;
-    padding: .75rem;
-}
-.content.flex p {
+.content p {
     font-family: "Sonorous", Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -361,7 +360,7 @@ src: url("../style/fonts/sonorous-webfont.woff") format("woff");
     display: block;
     text-align: center;
 }
-.content.flex p:not(.button){
+.content p:not(.button){
     color: #4B0082;
 }
 .button {
