@@ -323,3 +323,50 @@ header h1{
 .buttonicon {
     width: 13vw;
 }
+
+
+/* luuks ship */
+
+/* .landingbody {
+    background: url(../images/bg.png) repeat 0 0;
+    background-size: 100%;
+    height: 100vh;
+} */
+
+@font-face {
+font-family: "Sonorous";
+src: url("../style/fonts/Sonorous.otf");
+src: url("../style/fonts/sonorous-webfont.woff") format("woff");
+
+}
+.content.flex {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: table;
+}
+.content {
+    margin: 0 auto;
+    width: 350px;
+    padding: .75rem;
+}
+.content.flex p {
+    font-family: "Sonorous", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    max-width: 80vw;
+    font-size: 30px;
+    margin: .25rem;
+    padding: .25rem;
+    display: block;
+    text-align: center;
+}
+.content.flex p:not(.button){
+    color: #4B0082;
+}
+.button {
+    color: white;
+    background-color: #4B0082;
+    border: 5px solid white;
+    border-radius: 10vw;
+}
