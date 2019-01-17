@@ -11,6 +11,10 @@
         "Yoyogipark":{
             "coördinats":[35.671835, 139.694912],
             "discription":"One of the largest parks in Tokyo"
+        },
+        "Rainbow Bridge":{
+            "coördinats":[35.636590, 139.763150],
+            "discription":"a nice bridge"
         }
     }
 }
