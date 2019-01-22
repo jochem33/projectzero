@@ -436,12 +436,24 @@ header h1{
   -o-animation:      bounce 2.5s infinite;
   animation:         bounce 2.5s infinite;
 }
-.quote {
-  font-style: italic;
-  width: 70vw;
-  font-size: 42px;
+#generatetext {
+  font-size: 10px;
 }
-.subqoute {
+.quote {
+  width: 70vw;
+}
+.mainquote {
+  font-style: italic;
+  font-size: 22px;
+}
+.subquote {
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 18px;
+}
+.linebreak {
+  color: #4B0082;
+  background-color: #4B0082;
+  height: 4px;
+  width: 80vw;
+  border-radius: 20px;
 }
