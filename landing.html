@@ -4,17 +4,26 @@
   <meta charset="utf-8">
   <title>BeverTokyo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Travel Tokyo">
   <link rel="stylesheet" href="style/normalize.css">
   <link rel="stylesheet" href="style/style.css">
+  <script src="js/landing.js"></script>
 </head>
 
-<body class="landingbody">
-  <div class="content">
-    <p class="contentText">Where to go?</p>
-    <p onclick="window.location.href = 'index.html'" class="button contentText">Find out<br><a id="subtext">Generate a route</a></p>
+<body id="landingbody">
+  <div id="fullpage">
+    <div class="content">
+      <p class="contentText">Where to go?</p>
+      <p onclick="window.location.href = 'index.html'" class="button contentText">Find out<br><a class="subqoute">Generate a route</a></p>
+      <br><p class="findout contentText">Or find out more...</p>
+      <a href="#secondcontent" id="scroll">
+        <img width="100" height="100" src="images/scroll_arrow.png" onmouseover="hover(this);" onmouseout="unhover(this);">
+      </a>
+    </div>
   </div>
-  <script src="js/script.js"></script>
+  <div class="content" id="secondcontent">
+    <p class="contentText quote"> "Ik wilde alleen de beste dingen zien in Tokyo, en dankzij deze app kan ik dat." </p>
+    <p class="contentText subquote"> -Juriaan B. </p>
+  </div>
 </body>
 </html>
