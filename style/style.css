@@ -235,6 +235,8 @@ section{
 
 header{
     position: fixed;
+    top: 0;
+    height: 20vh;
     background-color: #4B0082;
     width: 100%;
     text-align: center;
@@ -282,13 +284,7 @@ header h1{
     border-left: none;
 }
 
-.middel {
-    display: flex;
-    overflow-x: hidden;
-    width: 100%;
-    min-height: 100%;
-    overflow-x: auto;
-}
+
 
 .circle{
     display: flex;
@@ -309,8 +305,19 @@ header h1{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+
+.middel {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none;
+
+}
+
 .buttonContainer {
     width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -318,6 +325,8 @@ header h1{
 
 .buttons {
     margin: 2vw;
+    pointer-events: all;
+
 }
 
 .buttonicon {
@@ -363,9 +372,18 @@ src: url("../style/fonts/sonorous-webfont.woff") format("woff");
 .content p:not(.button){
     color: #4B0082;
 }
+
 .button {
     color: white;
     background-color: #4B0082;
     border: 5px solid white;
     border-radius: 10vw;
+}
+
+
+#map {
+    position: fixed;
+    width: 100vw;
+    height: 80vh;
+    top: 20vh;
 }
