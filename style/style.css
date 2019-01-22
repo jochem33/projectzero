@@ -289,6 +289,10 @@ header h1{
     min-height: 100%;
     overflow-x: auto;
 }
+#map{
+    width: 100%;
+    height: 500px;
+}
 
 .circle{
     display: flex;
