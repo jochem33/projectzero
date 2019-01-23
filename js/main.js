@@ -1,8 +1,12 @@
+var numberOffMustSees = 0;
+
 function addMustsee() {
     mustSeeItems = document.getElementById("must-see-items");
     var input = document.createElement("input");
     input.type = "text";
     input.className = "overlay-must-see-input";
+    input.name = numberOffMustSees.toString();
+    numberOffMustSees ++;
     input.placeholder = "tap to type location"
     mustSeeItems.appendChild(input);
 }
