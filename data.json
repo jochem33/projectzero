@@ -1,0 +1,20 @@
+{
+    "sights":{
+        "Senso-ji":{
+            "coördinats":[35.714915, 139.796590],
+            "discription":"Temple in the middel of Tokyo"
+        },
+        "Tokio tower":{
+            "coördinats":[35.658615, 139.745422],
+            "discription":"Best observatory of Tokyo to observe the city"
+        },
+        "Yoyogipark":{
+            "coördinats":[35.671835, 139.694912],
+            "discription":"One of the largest parks in Tokyo"
+        },
+        "Rainbow Bridge":{
+            "coördinats":[35.636590, 139.763150],
+            "discription":"a nice bridge"
+        }
+    }
+}
