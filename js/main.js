@@ -13,16 +13,16 @@ function addMustsee() {
 
 
 function showGenerateOverlay() {
-    console.log("generate shown");
+    // console.log("generate shown");
 
     document.getElementById("overlay-menu").style.display = "block";
 
-    console.log("generate shown");
+    // console.log("generate shown");
 }
 
 
 function hideGenerateOverlay() {
     document.getElementById("overlay-menu").style.display = "none";
 
-    console.log("generate hidden");
+    // console.log("generate hidden");
 }

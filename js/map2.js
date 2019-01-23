@@ -1,21 +1,5 @@
 //api key G0IxuAKMgahregQDlzKW1bBbKkyWQGAt
 
-// fs = require("fs");
-
-// var data = JSON.parse(fs.readFileSync('../data.json').toString())
-
-var map = tomtom.L.map('map', { 
-    key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
-    basePath: 'sdk', 
-    center: [35.676814, 139.764176], 
-    zoom: 10
-  });
-
-
-
-
-  
-
 
 var offset = 4;
 
