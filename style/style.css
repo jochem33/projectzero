@@ -57,16 +57,16 @@ body {
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.overlay-items {
+  border: 4px solid white;
+  border-radius: 0 0 3vw 3vw;
+}
 .overlay-buttondiv {
     width: 80vw;
     display: flex;
     justify-content: center;
-
     padding: 5vw 0 5vw 0;
 }
-
-
 .overlay-submitbutton {
     background-color: #4B0082;
     text-align: center;
@@ -92,13 +92,13 @@ body {
 }
 
 .overlay-textinput > input:focus {
-    background-color: #8800EB;
     border-radius: 2vw;
     border: none;
 }
 
 .overlay-textinput > input {
-    text-align: right;
+    margin-left: 12px;
+    text-align: left;
     color: white;
     width: 97%;
     background-color: transparent;
@@ -112,6 +112,7 @@ body {
 
 .overlay-dropdown {
     position: relative;
+    border: 4px solid white;
 }
 
 .overlay-dropdown > select {
@@ -341,21 +342,21 @@ header h1{
     background-size: 210%;
 }
 
-#landingbody::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: white;
 }
 
-#landingbody::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 14px;
   background-color: white;
 }
-#landingbody::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #4B0082;
 }
 
-#landingbody::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background-color: #8800EB;
 }
 
