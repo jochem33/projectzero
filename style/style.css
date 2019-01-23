@@ -346,13 +346,9 @@ header h1{
 #landingbody::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #4B0082;
-  transition-property: border-radius;
-  transition-duration: .4s;
-  transition-timing-function: ease-in-out;
 }
 
 #landingbody::-webkit-scrollbar-thumb:hover {
-  border-radius: 0px;
   background-color: #8800EB;
 }
 
@@ -360,30 +356,24 @@ header h1{
   0%, 100% {top: 0px;}
   50% {top: 20px;}
 }
-/* @-webkit-keyframes bounce {
-  0% {margin-top: 40px;}
-  50% {margin-top: 60px;}
-  100% {margin-top: 40px;}
+@-webkit-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
 }
 @-moz-keyframes bounce {
-  0% {margin-top: 40px;}
-  50% {margin-top: 60px;}
-  100% {margin-top: 40px;}
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
 }
 @-o-keyframes bounce {
-  0% {margin-top: 40px;}
-  50% {margin-top: 60px;}
-  100% {margin-top: 40px;}
-} */
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
 @font-face {
     font-family: "Sonorous";
     src: url("../style/fonts/Sonorous.otf");
     src: url("../style/fonts/sonorous-webfont.woff") format("woff");
 }
 .content {
-    /* margin: 0 auto; */
-    /* width: 350px;
-    padding: .75rem; */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -427,6 +417,9 @@ header h1{
 }
 .findout {
   font-size: 20px;
+}
+.generatetext {
+  font-size: 25px;
 }
 #scroll {
   position: relative;
@@ -477,4 +470,7 @@ header h1{
   height: 4px;
   width: 80vw;
   border-radius: 20px;
+}
+.infoText {
+  transform: scale(0.9);
 }
