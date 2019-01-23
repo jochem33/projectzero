@@ -7,53 +7,62 @@
         <title>home</title>
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/style.css">
+
+        <script type='text/javascript' src='js/sdk/tomtom.min.js'></script>
+        <link rel='stylesheet' type='text/css' href='js/sdk/map.css'/>
     </head>
     <body>
             <div class="overlay-menu" id="overlay-menu">
                     <div class="overlay-menu-header">
                         <a onclick="hideGenerateOverlay()" class="overlay-menu-header-close-button">x</a>
                     </div>
-                    <form action="" method="post">
-                        <div class="overlay-item overlay-textinput">
-                            <input type="text" name="" id="" placeholder="Starting point">
-                        </div>
-                        <div class="overlay-item overlay-textinput">
-                            <input type="text" name="" id="" placeholder="End point">
-                        </div>
-                        <div class="overlay-dropdown overlay-item">
-                            <select>
-                                <option value="0">Route mood:</option>
-                                <option value="1">Sights</option>
-                                <option value="2">Road less traveled</option>
-                                <option value="3">Foodie</option>
-                            </select>
-                        </div>
-                        <div class="overlay-dropdown overlay-item">
-                            <select>
-                                <option value="0">Route lenght:</option>
-                                <option value="1">30 min</option>
-                                <option value="2">1 hour</option>
-                                <option value="3">1.5 hours</option>
-                                <option value="3">2 hours</option>
-                                <option value="3">2.5 hours</option>
-                                <option value="3">3 hours</option>
-                                <option value="3">4 hours</option>
-                                <option value="3">5 hours</option>
-                            </select>
-                        </div>
-                        <div class="overlay-mustsee overlay-item">
-                            <div class="overlay-mustsee-header">
-                                <p class="overlay-mustsee-header-text">Must See</p>
-                                <a class="overlay-mustsee-header-plus" onclick="addMustsee()">+</a>
+
+                    <div id="overlay-form">
+                        
+                        <form onsubmit="return false">
+                            <div class="overlay-item overlay-textinput">
+                                <input type="text" name="" id="" placeholder="Starting point">
                             </div>
-                            <div id="must-see-items">
-                                
+                            <div class="overlay-item overlay-textinput">
+                                <input type="text" name="" id="" placeholder="End point">
                             </div>
-                        </div>
-                        <div class="overlay-buttondiv">
-                            <button type="submit" class="overlay-item overlay-submitbutton">Generate</button>
-                        </div>
-                    </form>
+                            <div class="overlay-dropdown overlay-item">
+                                <select>
+                                    <option value="0">Route mood:</option>
+                                    <option value="1">Sights</option>
+                                    <option value="2">Road less traveled</option>
+                                    <option value="3">Foodie</option>
+                                </select>
+                            </div>
+                            <div class="overlay-dropdown overlay-item">
+                                <select>
+                                    <option value="0">Route lenght:</option>
+                                    <option value="1">30 min</option>
+                                    <option value="2">1 hour</option>
+                                    <option value="3">1.5 hours</option>
+                                    <option value="3">2 hours</option>
+                                    <option value="3">2.5 hours</option>
+                                    <option value="3">3 hours</option>
+                                    <option value="3">4 hours</option>
+                                    <option value="3">5 hours</option>
+                                </select>
+                            </div>
+                            <div class="overlay-mustsee overlay-item">
+                                <div class="overlay-mustsee-header">
+                                    <p class="overlay-mustsee-header-text">Must See</p>
+                                    <a class="overlay-mustsee-header-plus" onclick="addMustsee()">+</a>
+                                </div>
+                                <div id="must-see-items">
+                                    
+                                </div>
+                            </div>
+                            <div class="overlay-buttondiv">
+                                <button class="overlay-item overlay-submitbutton" onclick="generateRoute(this.form)">Generate</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    
                 </div>
 
 
@@ -82,6 +91,7 @@
                     </div>
                 </div>
             </div>
+            <div id="map"></div>
         </section>
 
 
@@ -91,5 +101,7 @@
         <script src="js/main.js"></script>
 
         <script src="js/dropwdown.js"></script>
+
+        <script src="js/map2.js"></script>
     </body>
 </html>
