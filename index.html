@@ -8,14 +8,23 @@
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/style.css">
 
-        <script type='text/javascript' src='js/sdk/tomtom.min.js'></script>
-        <link rel='stylesheet' type='text/css' href='js/sdk/map.css'/>
+        <script type='text/javascript' src='sdk/tomtom.min.js'></script>
+        <link rel='stylesheet' type='text/css' href='sdk/map.css'/>
     </head>
     <body>
+
+
+
+        <section>
             <div class="overlay-menu" id="overlay-menu">
-                    <div class="overlay-menu-header">
-                        <a onclick="hideGenerateOverlay()" class="overlay-menu-header-close-button">x</a>
+                <div class="overlay-menu-header">
+                    <a onclick="hideGenerateOverlay()" class="overlay-menu-header-close-button">x</a>
+                </div>
+                <form action="" method="post">
+                    <div class="overlay-item overlay-textinput">
+                        <input type="text" name="" id="" placeholder="Starting point">
                     </div>
+  
 
                     <div id="overlay-form">
                         
@@ -63,9 +72,9 @@
 
                     </div>
                     
-                </div>
+                </div
 
-
+        
 
 
 
@@ -73,11 +82,8 @@
             <header>
                 <h1>Tokyo</h1>
                 <div class="search-block">
-                    <form action="">
-                            <input type="text" placeholder="" name="search" class="headinp">
-                            <button type="submit"><i></i></button>
-        
-                    </form>
+                    <input type="text" placeholder="" name="search" class="headinp" id="search-block">
+                    <button onclick="searchFromHeader();"><i></i></button>
                 </div>
             </header>
             <div class="middel">
@@ -91,15 +97,19 @@
                     </div>
                 </div>
             </div>
-            <div id="map"></div>
         </section>
 
 
 
+        <div id="map">
+
+        </div> 
+
+        
 
         
         <script src="js/main.js"></script>
-
+        <script src="js/map.js"></script>
         <script src="js/dropwdown.js"></script>
 
         <script src="js/map2.js"></script>
