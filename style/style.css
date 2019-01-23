@@ -256,6 +256,10 @@ header h1{
     justify-content: center;
 }
 
+/* .autoCompleetresults {
+    display: fixed
+} */
+
 .headinp{
     float: left;
     background-color: #8800EB;
