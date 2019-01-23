@@ -331,11 +331,46 @@ header h1{
 
 /* luuks ship */
 
- .landingbody {
-    background: url(../images/bg.png) repeat 0 0;
+ #landingbody {
+    background: url(../images/bg.png) repeat 60% 0;
     height: 100vh;
-    background-position:50% 50%;  /* Sets reference point to scale from */
-    background-size: cover;
+    overflow: auto;
+    background-size: 210%;
+}
+
+#landingbody::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+#landingbody::-webkit-scrollbar {
+  width: 14px;
+  background-color: white;
+}
+#landingbody::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4B0082;
+}
+
+#landingbody::-webkit-scrollbar-thumb:hover {
+  background-color: #8800EB;
+}
+
+@keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-webkit-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-moz-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-o-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
 }
 @font-face {
     font-family: "Sonorous";
@@ -343,9 +378,6 @@ header h1{
     src: url("../style/fonts/sonorous-webfont.woff") format("woff");
 }
 .content {
-    /* margin: 0 auto; */
-    /* width: 350px;
-    padding: .75rem; */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -358,7 +390,6 @@ header h1{
     font-weight: normal;
     font-style: normal;
     width: 80vw;
-    max-width: 500px;
     font-size: 30px;
     margin: .25rem;
     padding: .25rem;
@@ -373,6 +404,7 @@ header h1{
     background-color: #4B0082;
     border: 5px solid white;
     border-radius: 10vw;
+    max-width: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition-property: box-shadow, transform;
     transition-duration: .4s;
@@ -387,6 +419,62 @@ header h1{
 .button:active {
     background-color: #8800EB;
 }
-#subtext {
+.findout {
   font-size: 20px;
+}
+.generatetext {
+  font-size: 25px;
+}
+#scroll {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  -webkit-animation: bounce 2.5s infinite;
+  -moz-animation:    bounce 2.5s infinite;
+  -o-animation:      bounce 2.5s infinite;
+  animation:         bounce 2.5s infinite;
+}
+#generatetext {
+  font-size: 10px;
+}
+#secondcontent {
+  transform: scale(0.8);
+}
+#backtotop {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #4B0082;
+  text-decoration-color: #4B0082;
+  transition-property: box-shadow, transform;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+}
+#backtotop:hover {
+  color: #8800EB;
+  -webkit-text-decoration-color: #8800EB;
+  text-decoration-color: #8800EB;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.quote {
+  width: 70vw;
+}
+.mainquote {
+  font-style: italic;
+  font-size: 22px;
+}
+.subquote {
+  font-weight: lighter;
+  font-size: 18px;
+}
+.linebreak {
+  color: #4B0082;
+  background-color: #4B0082;
+  height: 4px;
+  width: 80vw;
+  border-radius: 20px;
+}
+.infoText {
+  transform: scale(0.9);
 }
