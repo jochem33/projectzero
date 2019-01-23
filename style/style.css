@@ -439,6 +439,16 @@ header h1{
 #generatetext {
   font-size: 10px;
 }
+#backtotop {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #4B0082;
+  text-decoration-color: #4B0082;
+}
+#backtotop:hover {
+  color: #8800EB;
+  -webkit-text-decoration-color: #8800EB;
+  text-decoration-color: #8800EB;
+}
 .quote {
   width: 70vw;
 }
