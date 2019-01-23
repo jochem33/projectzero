@@ -328,11 +328,10 @@ header h1{
 /* luuks ship */
 
  #landingbody {
-    background: url(../images/bg.png) repeat 0 0;
+    background: url(../images/bg.png) repeat 60% 0;
     height: 100vh;
     overflow: auto;
-    background-position:50% 50%;  /* Sets reference point to scale from */
-    background-size: cover;
+    background-size: 210%;
 }
 
 #landingbody::-webkit-scrollbar-track {
@@ -344,13 +343,16 @@ header h1{
   width: 14px;
   background-color: white;
 }
-
 #landingbody::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #4B0082;
+  transition-property: border-radius;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 }
 
 #landingbody::-webkit-scrollbar-thumb:hover {
+  border-radius: 0px;
   background-color: #8800EB;
 }
 
@@ -439,15 +441,24 @@ header h1{
 #generatetext {
   font-size: 10px;
 }
+#secondcontent {
+  transform: scale(0.8);
+}
 #backtotop {
   text-decoration: underline;
   -webkit-text-decoration-color: #4B0082;
   text-decoration-color: #4B0082;
+  transition-property: box-shadow, transform;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 }
 #backtotop:hover {
   color: #8800EB;
   -webkit-text-decoration-color: #8800EB;
   text-decoration-color: #8800EB;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .quote {
   width: 70vw;
