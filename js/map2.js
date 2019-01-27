@@ -9,64 +9,18 @@ var rootlocations;
 function generateRoute(form){
 
 
+    addToPlaces(form, 0)
 
     for(var i = offset; i < numberOffMustSees + offset; i++){
-
-        const http = new XMLHttpRequest();
-        const url='https://api.tomtom.com/search/2/search/' + form.elements[i].value+ '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
-        http.open("GET", url);
-        http.setRequestHeader("Content-Type", "text/plain");
-        http.send();
-        http.onreadystatechange=(e)=>{
-            resultsResponse = JSON.parse(http.responseText);
-
-            var lat = resultsResponse["results"][0]["position"]["lat"];
-            var lon = resultsResponse["results"][0]["position"]["lon"];
-            console.log(lat + "," + lon);
-            place.push(lat + "," + lon);
-
-        }
-    }
-    
-    // console.log(place, form.elements[0].value, form.elements[1].value);
-    // startEndLocation = (form.elements[0].value + ":" + form.elements[1].value).toString()
-    // console.log(startEndLocation)
-
-    const http = new XMLHttpRequest();
-    const url='https://api.tomtom.com/search/2/search/' + form.elements[0].value + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
-    http.open("GET", url);
-    http.setRequestHeader("Content-Type", "text/plain");
-    http.send();
-    http.onreadystatechange=(e)=>{
-        resultsResponse = JSON.parse(http.responseText);
-
-        var lat = resultsResponse["results"][0]["position"]["lat"];
-        var lon = resultsResponse["results"][0]["position"]["lon"];
-        console.log(lat + "," + lon);
-        place.push(lat + "," + lon);
-
+        // if (i < QuerySplit.length - 1) {
+        lastTime = true;
+        //     console.log("Laatste loop")
+        // }
+        
+        addToPlaces(form, i, lastTime)
     }
 
-
-
-    const http2 = new XMLHttpRequest();
-    const url2 ='https://api.tomtom.com/search/2/search/' + form.elements[1].value + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
-    http2.open("GET", url2);
-    http2.setRequestHeader("Content-Type", "text/plain");
-    http2.send();
-    http2.onreadystatechange=(e)=>{
-        resultsResponse = JSON.parse(http2.responseText);
-
-        var lat = resultsResponse["results"][0]["position"]["lat"];
-        var lon = resultsResponse["results"][0]["position"]["lon"];
-        console.log(lat + "," + lon);
-        place.push(lat + "," + lon);
-
-        routes()
-    }
-
-
-    
+    addToPlaces(form, 1)
 };
 
 
@@ -75,7 +29,7 @@ function routes() {
 
     console.log(place)
     console.log(rootlocations)
-    console.log(place.leght)
+    console.log(place.lenght)
     for (var i = 0; i < place.length; i++){
         rootlocations = (rootlocations + ":" + (place[i]).toString())
     }
@@ -100,4 +54,27 @@ function routes() {
             }).addTo(map);
             map.fitBounds(route.getBounds(), {padding: [5, 5]});
     });
+}
+
+
+
+function addToPlaces(form, formIndex, lastTime) {
+    const http = new XMLHttpRequest();
+        const url='https://api.tomtom.com/search/2/search/' + form.elements[formIndex].value+ '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
+        http.open("GET", url);
+        http.setRequestHeader("Content-Type", "text/plain");
+        http.send();
+        http.onreadystatechange=(e)=>{
+            resultsResponse = JSON.parse(http.responseText);
+
+            var lat = resultsResponse["results"][0]["position"]["lat"];
+            var lon = resultsResponse["results"][0]["position"]["lon"];
+            console.log(lat + "," + lon);
+            place.push(lat + "," + lon);
+            
+            // if (lastTime) {
+            //     routes();
+            // }
+            routes();
+        }
 }
