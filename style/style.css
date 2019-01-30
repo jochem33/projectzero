@@ -338,6 +338,7 @@ header h1{
     height: 100vh;
     overflow: auto;
     background-size: 210%;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar-track {
@@ -385,7 +386,6 @@ body::-webkit-scrollbar-thumb:hover {
     height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
 .contentText {
     font-family: "Sonorous", Arial, sans-serif;
@@ -407,7 +407,7 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #4B0082;
     border: 5px solid white;
     border-radius: 10vw;
-
+    cursor: pointer;
     max-width: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition-property: box-shadow, transform;
@@ -443,10 +443,14 @@ body::-webkit-scrollbar-thumb:hover {
 #generatetext {
   font-size: 10px;
 }
+#firstcontent {
+  transform: scale(0.95);
+}
 #secondcontent {
-  transform: scale(0.8);
+  transform: scale(0.75);
 }
 #backtotop {
+  width: inherit;
   text-decoration: underline;
   -webkit-text-decoration-color: #4B0082;
   text-decoration-color: #4B0082;
