@@ -57,6 +57,9 @@ function routes() {
     console.log(rootlocations)
     console.log(place.lenght)
     for (var i = 0; i < place.length; i++){
+        console.log(place[i]);
+        var plc = place[i].split(",")
+        var marker = tomtom.L.marker(plc).addTo(map);
         rootlocations = (rootlocations + ":" + (place[i]).toString())
     }
     // for (var i = 0; i < place.length; i++){
