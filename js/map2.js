@@ -1,6 +1,32 @@
 //api key G0IxuAKMgahregQDlzKW1bBbKkyWQGAt
 
 
+var map = tomtom.L.map('map', { 
+    key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
+    basePath: 'sdk', 
+    center: [35.667998, 139.783823], 
+    zoom: 9
+});
+
+
+function searchFromHeader() {
+    searchBlock = document.getElementById("search-block");
+
+    const http = new XMLHttpRequest();
+    const url='https://api.tomtom.com/search/2/search/' + searchBlock.value + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
+    http.open("GET", url);
+    http.setRequestHeader("Content-Type", "text/plain");
+    http.send();
+    http.onreadystatechange=(e)=>{
+        resultsResponse = JSON.parse(http.responseText);
+
+        var lat = resultsResponse["results"][0]["position"]["lat"];
+        var lon = resultsResponse["results"][0]["position"]["lon"];
+        map.setView([lat, lon], 12);
+    }
+}
+
+
 var offset = 4;
 var formData = document.getElementById("overlay-form");
 var place = []
