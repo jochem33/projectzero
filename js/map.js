@@ -8,6 +8,22 @@ var map = tomtom.L.map('map', {
     zoom: 9
 });
 
+var markerOptionsFinish = {
+    icon: tomtom.L.icon({
+        iconUrl: 'images/finish.png',
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+
+var markerOptionsWaypiont = {
+    icon: tomtom.L.icon({
+        iconUrl: 'images/finish.png',
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+
 
 function searchFromHeader() {
     searchBlock = document.getElementById("search-block");
@@ -59,7 +75,13 @@ function routes() {
     for (var i = 0; i < place.length; i++){
         console.log(place[i]);
         var plc = place[i].split(",")
-        var marker = tomtom.L.marker(plc).addTo(map);
+        if (i == place.length - 1){
+            var marker = tomtom.L.marker(plc, markerOptionsFinish).addTo(map);
+        }   else if (i == 0){
+            var marker = tomtom.L.marker(plc).addTo(map);
+        }   else{
+            var marker = tomtom.L.marker(plc).addTo(map);
+        }
         rootlocations = (rootlocations + ":" + (place[i]).toString())
     }
     // for (var i = 0; i < place.length; i++){
