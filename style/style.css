@@ -440,6 +440,9 @@ body::-webkit-scrollbar-thumb:hover {
   -o-animation:      bounce 2.5s infinite;
   animation:         bounce 2.5s infinite;
 }
+#scroll:hover {
+  filter: saturate(2);
+}
 #generatetext {
   font-size: 10px;
 }
