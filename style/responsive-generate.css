@@ -11,7 +11,6 @@ body, html {
         /* box-shadow: 100vw 100vw 100vw rgba(0, 0, 0, 1); */
         box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2), 0 40px 100px 0 rgba(0, 0, 0, 0.19);
         margin: 5vh 10vw 0 55vw;
-        overflow-y: hidden;
     }
     
     .overlay-menu-header {
@@ -93,4 +92,18 @@ body, html {
         top: -3vw;
         right: 1vw;
     }
+
+    .overlay-must-see-input {
+        width: 28vw;
+    }
+
+    .circle{
+        width: 9vh;
+        height: 9vh;
+    }
+
+    .buttonicon {
+        width: 8vh;
+    }
 }
+
