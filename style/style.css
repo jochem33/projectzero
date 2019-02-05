@@ -16,11 +16,29 @@ body {
     /* margin-top: 5vh; */
     border-radius: 15vw;
     justify-content: center;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: absolute;
     box-shadow: 0 0 100vw rgba(0, 0, 0, 1);
     /*  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) */
+}
 
+.overlay-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.overlay-menu::-webkit-scrollbar {
+  width: 14px;
+  background-color: white;
+}
+.overlay-menu::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4B0082;
+}
+
+.overlay-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #8800EB;
 }
 
 .overlay-menu-header {
@@ -234,12 +252,19 @@ section{
     height: 100%;
 }
 
-header{
+header {
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -48%);
     position: fixed;
+    z-index: 100;
     top: 0;
     height: 20vh;
     background-color: #4B0082;
-    width: 100%;
+    border-radius: 0px 0px 40px 40px;
+    -webkit-box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
+    box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
     text-align: center;
     font-family: 'Varela Round', 'Roboto';
 }
@@ -255,6 +280,7 @@ header h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(17.75%) scale(0.85);
 }
 
 .headinp{
@@ -495,6 +521,6 @@ body::-webkit-scrollbar-thumb:hover {
 #map {
     position: fixed;
     width: 100vw;
-    height: 80vh;
-    top: 20vh;
+    height: 100vh;
+    top: 0;
 }
