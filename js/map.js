@@ -1,6 +1,6 @@
 //api key G0IxuAKMgahregQDlzKW1bBbKkyWQGAt
 
-
+//init map
 var map = tomtom.L.map('map', { 
     key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
     basePath: 'sdk', 
@@ -9,22 +9,8 @@ var map = tomtom.L.map('map', {
 });
 
 
-function searchFromHeader() {
-    searchBlock = document.getElementById("search-block");
-
-    const http = new XMLHttpRequest();
-    const url='https://api.tomtom.com/search/2/search/' + searchBlock.value + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
-    http.open("GET", url);
-    http.setRequestHeader("Content-Type", "text/plain");
-    http.send();
-    http.onreadystatechange=(e)=>{
-        resultsResponse = JSON.parse(http.responseText);
-
-        var lat = resultsResponse["results"][0]["position"]["lat"];
-        var lon = resultsResponse["results"][0]["position"]["lon"];
-        map.setView([lat, lon], 12);
-    }
-}
+var aanvullendelocaties = [];
+var routelocaties = [];
 
 
 var offset = 4;
@@ -32,47 +18,31 @@ var formData = document.getElementById("overlay-form");
 var place = []
 var rootlocations;
 
-function generateRoute(form){
 
+async function generateRoute(form){
+    start = await textToLatLonRequest(form.elements[0].value)
+    routelocaties.push(start[0] + "," + start[1])
 
-    addToPlaces(form, 0)
-
-    for(var i = offset; i < numberOffMustSees + offset; i++){
-        // if (i < QuerySplit.length - 1) {
-        lastTime = true;
-        //     console.log("Laatste loop")
-        // }
-        
-        addToPlaces(form, i, lastTime)
+    for(var i = offset; i < numberOffMustSees + offset; i++){        
+        var locatie = await textToLatLonRequest(form.elements[i].value);
+        routelocaties.push(locatie[0] + "," + locatie[1]);
     }
 
-    addToPlaces(form, 1)
-};
+    await extralocaties(form);
+
+    end = await textToLatLonRequest(form.elements[1].value)
+    routelocaties.push(end[0] + "," + end[1])
 
 
-function routes() {
-    rootlocations = "";
 
-    console.log(place)
-    console.log(rootlocations)
-    console.log(place.lenght)
-    for (var i = 0; i < place.length; i++){
-        rootlocations = (rootlocations + ":" + (place[i]).toString())
+    var rootlocations = "";
+    for (var i = 0; i < routelocaties.length; i++){
+        rootlocations = (rootlocations + ":" + (routelocaties[i]).toString())
     }
-    // for (var i = 0; i < place.length; i++){
-    //     if(i=0){
-    //         rootlocations = place[i].toString()
-    //     } else {
-    //         rootlocations = (rootlocations + ":" + (place[i]).toString())
-    //     }
-    // }
-
-    console.log(place)
-    console.log(rootlocations)
 
     rootlocations = rootlocations.substr(1);
     
-    tomtom.routing() 
+    await tomtom.routing() 
         .locations(rootlocations)
         .go().then(function(routeJson) {
             var route = tomtom.L.geoJson(routeJson, {
@@ -80,27 +50,55 @@ function routes() {
             }).addTo(map);
             map.fitBounds(route.getBounds(), {padding: [5, 5]});
     });
-}
+
+    hideGenerateOverlay()
+};
+
+
+// function routes() {
+//     rootlocations = "";
+
+//     for (var i = 0; i < place.length; i++){
+//         rootlocations = (rootlocations + ":" + (place[i]).toString())
+//     }
+//     // for (var i = 0; i < place.length; i++){
+//     //     if(i=0){
+//     //         rootlocations = place[i].toString()
+//     //     } else {
+//     //         rootlocations = (rootlocations + ":" + (place[i]).toString())
+//     //     }
+//     // }
+
+//     rootlocations = rootlocations.substr(1);
+    
+//     tomtom.routing() 
+//         .locations(rootlocations)
+//         .go().then(function(routeJson) {
+//             var route = tomtom.L.geoJson(routeJson, {
+//                 style: {color: '#8800EB', opacity: 0.6, weight: 4}
+//             }).addTo(map);
+//             map.fitBounds(route.getBounds(), {padding: [5, 5]});
+//     });
+// }
 
 
 
-function addToPlaces(form, formIndex, lastTime) {
-    const http = new XMLHttpRequest();
-        const url='https://api.tomtom.com/search/2/search/' + form.elements[formIndex].value+ '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
-        http.open("GET", url);
-        http.setRequestHeader("Content-Type", "text/plain");
-        http.send();
-        http.onreadystatechange=(e)=>{
-            resultsResponse = JSON.parse(http.responseText);
+// function addToPlaces(form, formIndex, lastTime) {
+//     const http = new XMLHttpRequest();
+//         const url='https://api.tomtom.com/search/2/search/' + form.elements[formIndex].value + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=10';
+//         http.open("GET", url);
+//         http.setRequestHeader("Content-Type", "text/plain");
+//         http.send();
+//         http.onreadystatechange=(e)=>{
+//             resultsResponse = JSON.parse(http.responseText);
 
-            var lat = resultsResponse["results"][0]["position"]["lat"];
-            var lon = resultsResponse["results"][0]["position"]["lon"];
-            console.log(lat + "," + lon);
-            place.push(lat + "," + lon);
+//             var lat = resultsResponse["results"][0]["position"]["lat"];
+//             var lon = resultsResponse["results"][0]["position"]["lon"];
+//             place.push(lat + "," + lon);
             
-            // if (lastTime) {
-            //     routes();
-            // }
-            routes();
-        }
-}
+//             // if (lastTime) {
+//             //     routes();
+//             // }
+//             routes();
+//         }
+// }
