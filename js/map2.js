@@ -1,6 +1,7 @@
 //api key G0IxuAKMgahregQDlzKW1bBbKkyWQGAt
 var time;
 
+
 async function extralocaties(form) {
     time = form.elements[3].value;
     time = parseFloat(time);
@@ -8,18 +9,12 @@ async function extralocaties(form) {
 
     var latlon = await textToLatLonRequest(form.elements[0].value)
 
-    var results = await getCategoryLocations2("restaurant", time, {lat: latlon[0], lon: latlon[1]})
+    var results = await getCategoryLocations("restaurant", time, {lat: latlon[0], lon: latlon[1]})
 
     for (var i = 0; i < results.length; i++){
         routelocaties.push(results[i]["position"]["lat"] + "," + results[i]["position"]["lon"])
     }
-
-    console.log(results)
-
 }
-
-
-
 
 
 async function searchFromHeader() {
@@ -29,11 +24,6 @@ async function searchFromHeader() {
 
     map.setView(coordinates, 12);
 }
-
-
-
-
-
 
 
 function textToLatLonRequest(query) {
@@ -53,26 +43,9 @@ function textToLatLonRequest(query) {
     });
 }
 
-function getCategoryLocations(query, resultCount, center) {
-    return new Promise(resolve => {
-        const http = new XMLHttpRequest();
-        const url='https://api.tomtom.com/search/2/categorySearch/' + query + '.JSON?key=G0IxuAKMgahregQDlzKW1bBbKkyWQGAt&typeahead=false&limit=' + resultCount + '&center=' + center + '&radius=10000';
-        http.open("GET", url);
-        http.setRequestHeader("Content-Type", "text/plain");
-        http.send();
-        http.onreadystatechange=(e)=>{
-            resultsResponse = JSON.parse(http.responseText);
 
-            resolve(resultsResponse["results"]);
-        }
-    });
-}
-
-async function getCategoryLocations2(query, resultCount, center) {
+async function getCategoryLocations(query, resultCount, center) {
     var results;
-    
-    console.log(center)
-
     await tomtom.categorySearch()
         .query(query)
         .center(center)
@@ -83,15 +56,4 @@ async function getCategoryLocations2(query, resultCount, center) {
         });
 
     return results;
-
-
-    // return new Promise(resolve => {
-    //     tomtom.categorySearch()
-    //         .query("restaurant")
-    //         .go()
-    //         .center(center)
-    //         .then(function(value) {
-    //             console.log(value);
-    //         });
-    // });
 }
