@@ -8,7 +8,7 @@ async function extralocaties(form) {
 
     var latlon = await textToLatLonRequest(form.elements[0].value)
 
-    var results = await getCategoryLocations("restaurant", time, [0, 0])
+    var results = await getCategoryLocations2("restaurant", time, {lat: latlon[0], lon: latlon[1]})
 
     for (var i = 0; i < results.length; i++){
         routelocaties.push(results[i]["position"]["lat"] + "," + results[i]["position"]["lon"])
@@ -68,5 +68,30 @@ function getCategoryLocations(query, resultCount, center) {
     });
 }
 
+async function getCategoryLocations2(query, resultCount, center) {
+    var results;
+    
+    console.log(center)
+
+    await tomtom.categorySearch()
+        .query(query)
+        .center(center)
+        .limit(resultCount)
+        .go()
+        .then(function(value) {
+            results = value;
+        });
+
+    return results;
 
 
+    // return new Promise(resolve => {
+    //     tomtom.categorySearch()
+    //         .query("restaurant")
+    //         .go()
+    //         .center(center)
+    //         .then(function(value) {
+    //             console.log(value);
+    //         });
+    // });
+}

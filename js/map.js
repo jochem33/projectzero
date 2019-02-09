@@ -23,12 +23,12 @@ async function generateRoute(form){
     start = await textToLatLonRequest(form.elements[0].value)
     routelocaties.push(start[0] + "," + start[1])
 
+    await extralocaties(form);
+
     for(var i = offset; i < numberOffMustSees + offset; i++){        
         var locatie = await textToLatLonRequest(form.elements[i].value);
         routelocaties.push(locatie[0] + "," + locatie[1]);
     }
-
-    await extralocaties(form);
 
     end = await textToLatLonRequest(form.elements[1].value)
     routelocaties.push(end[0] + "," + end[1])
@@ -37,6 +37,8 @@ async function generateRoute(form){
 
     var rootlocations = "";
     for (var i = 0; i < routelocaties.length; i++){
+        var currentLatLon = routelocaties[i].split(",");
+        var marker = tomtom.L.marker([currentLatLon[0], currentLatLon[1]]).addTo(map);
         rootlocations = (rootlocations + ":" + (routelocaties[i]).toString())
     }
 
