@@ -21,15 +21,6 @@ var map = tomtom.L.map('map', {
 
 
 
-
-
-var map = tomtom.L.map('map', { 
-    key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
-    basePath: 'sdk', 
-    center: [35.667998, 139.783823], 
-    zoom: 9
-});
-
 var markerOptionsFinish = {
     icon: tomtom.L.icon({
         iconUrl: 'images/finish.png',
@@ -77,7 +68,19 @@ async function generateRoute(form){
     var rootlocations = "";
     for (var i = 0; i < routelocaties.length; i++){
         var currentLatLon = routelocaties[i].split(",");
-        var marker = tomtom.L.marker([currentLatLon[0], currentLatLon[1]]).addTo(map);
+        
+
+        if (i == 0) {
+            var marker = tomtom.L.marker([currentLatLon[0], currentLatLon[1]], markerOptionsStart).addTo(map);
+        }
+        else if (i == routelocaties.length - 1){
+            var marker = tomtom.L.marker([currentLatLon[0], currentLatLon[1]], markerOptionsFinish).addTo(map);
+        }
+        else {
+            var marker = tomtom.L.marker([currentLatLon[0], currentLatLon[1]], markerOptionsWaypiont).addTo(map);
+        }
+
+
         rootlocations = (rootlocations + ":" + (routelocaties[i]).toString())
     }
 
