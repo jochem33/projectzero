@@ -24,7 +24,7 @@ async function generateRoute(form){
     start = await textToLatLonRequest(form.elements[0].value)
     routelocaties.push(start[0] + "," + start[1])
 
-    await extralocaties(form);
+    await extralocaties(form, form.elements[2].value);
 
     for(var i = offset; i < numberOffMustSees + offset; i++){        
         var locatie = await textToLatLonRequest(form.elements[i].value);
@@ -58,14 +58,14 @@ async function generateRoute(form){
 };
 
 
-async function extralocaties(form) {
+async function extralocaties(form, query) {
     time = form.elements[3].value;
     time = parseFloat(time);
     time = (time * 2) - 2;
 
     var latlon = await textToLatLonRequest(form.elements[0].value)
 
-    var results = await getCategoryLocations("restaurant", time, {lat: latlon[0], lon: latlon[1]})
+    var results = await getCategoryLocations(query, time, {lat: latlon[0], lon: latlon[1]})
 
     for (var i = 0; i < results.length; i++){
         routelocaties.push(results[i]["position"]["lat"] + "," + results[i]["position"]["lon"])
