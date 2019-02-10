@@ -88,6 +88,7 @@ async function generateRoute(form){
     
     await tomtom.routing() 
         .locations(rootlocations)
+        .travelMode("pedestrian")
         .go().then(function(routeJson) {
             var route = tomtom.L.geoJson(routeJson, {
                 style: {color: '#8800EB', opacity: 0.6, weight: 4}
@@ -99,6 +100,10 @@ async function generateRoute(form){
 };
 
 
+
+
+
+
 async function extralocaties(form, query) {
     time = form.elements[3].value;
     time = parseFloat(time);
@@ -107,11 +112,17 @@ async function extralocaties(form, query) {
     var latlon = await textToLatLonRequest(form.elements[0].value)
 
     var results = await getCategoryLocations(query, time, {lat: latlon[0], lon: latlon[1]})
+    // var results = await get(query, time, {lat: latlon[0], lon: latlon[1]});
+
 
     for (var i = 0; i < results.length; i++){
-        routelocaties.push(results[i]["position"]["lat"] + "," + results[i]["position"]["lon"])
+        routelocaties.push(results[i]["position"]["lat"] + "," + results[i]["position"]["lon"]);
     }
 }
+
+
+
+
 
 
 async function searchFromHeader() {
@@ -121,6 +132,10 @@ async function searchFromHeader() {
 
     map.setView(coordinates, 12);
 }
+
+
+
+
 
 
 function textToLatLonRequest(query) {
@@ -141,6 +156,10 @@ function textToLatLonRequest(query) {
 }
 
 
+
+
+
+
 async function getCategoryLocations(query, resultCount, center) {
     var results;
     await tomtom.categorySearch()
@@ -151,6 +170,40 @@ async function getCategoryLocations(query, resultCount, center) {
         .then(function(value) {
             results = value;
         });
+
+    return results;
+}
+
+
+
+
+
+
+
+async function getAlongrouteCategoryLocations(query, resultCount) {
+    var results;
+    var route = [];
+    for (var i = 0; i < routelocaties.length; i++){
+        var location = routelocaties[i].split(",");
+        // route.push({"lat": location[0], "lon":location[1]});
+        route.push([parseFloat(location[0]), parseFloat(location[1])]);
+    }
+
+    console.log(route);
+
+    await tomtom.alongRouteSearch({
+        limit: resultCount,
+        maxDetourTime: 3600,
+        query: query,
+        route: route
+        })
+        .go()
+        .then(function(response) {
+            console.log('SUMMARY:');
+            console.table(response.summary);
+            console.log('RESULTS:');
+            console.log(response.results);
+          });
 
     return results;
 }
