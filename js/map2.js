@@ -20,6 +20,44 @@ var map = tomtom.L.map('map', {
 });
 
 
+
+
+
+var map = tomtom.L.map('map', { 
+    key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
+    basePath: 'sdk', 
+    center: [35.667998, 139.783823], 
+    zoom: 9
+});
+
+var markerOptionsFinish = {
+    icon: tomtom.L.icon({
+        iconUrl: 'images/finish.png',
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+
+var markerOptionsWaypiont = {
+    icon: tomtom.L.icon({
+        iconUrl: 'images/waypoint.png',
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+
+var markerOptionsStart = {
+    icon: tomtom.L.icon({
+        iconUrl: 'images/start.png',
+        iconSize: [30, 34],
+        iconAnchor: [15, 34]
+    })
+};
+
+
+
+
+
 async function generateRoute(form){
     start = await textToLatLonRequest(form.elements[0].value)
     routelocaties.push(start[0] + "," + start[1])
