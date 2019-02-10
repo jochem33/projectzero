@@ -20,6 +20,16 @@ var map = tomtom.L.map('map', {
 });
 
 
+
+
+
+var map = tomtom.L.map('map', { 
+    key: 'G0IxuAKMgahregQDlzKW1bBbKkyWQGAt', 
+    basePath: 'sdk', 
+    center: [35.667998, 139.783823], 
+    zoom: 9
+});
+
 var markerOptionsFinish = {
     icon: tomtom.L.icon({
         iconUrl: 'images/finish.png',
