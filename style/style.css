@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    background-color: white;
+    font-family: 'Varela Round', "Ariel Rounded";
+}
+
+.overlay-menu {
+    z-index: 10000;
+    float: left;
+    display: none;
+    background-color: whitesmoke;
+    width: 80vw;
+    height: 90vh;
+    margin: 5vh 10vw 0 10vw;
+    /* margin-top: 5vh; */
+    border-radius: 15vw;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    box-shadow: 0 0 100vw rgba(0, 0, 0, 1);
+    /*  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) */
+}
+
+.overlay-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.overlay-menu::-webkit-scrollbar {
+  width: 14px;
+  background-color: white;
+}
+.overlay-menu::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4B0082;
+}
+
+.overlay-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #8800EB;
+}
+
+.overlay-menu-header {
+    background-color: #4B0082;
+    height: 10vh;
+    width: 80vw;
+    border-radius: 15vw 15vw 0 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overlay-menu-header-close-button {
+    color: white;
+    font-size: 11vh;
+    font-family: 'Varela Round', "Ariel Rounded";
+
+    margin-right: 7vw;
+    position: relative;
+    top: -2vh;
+
+    font-weight: bold;
+}
+
+
+.overlay-item {
+    width: 70vw;
+    margin: auto;
+    margin-top: 5vw;
+    margin-top: 5vw;
+
+    border: 4px solid white;
+    border-radius: 3vw;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.overlay-items {
+  border: 4px solid white;
+  border-radius: 0 0 3vw 3vw;
+}
+.overlay-buttondiv {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    padding: 5vw 0 5vw 0;
+}
+.overlay-submitbutton {
+    background-color: #4B0082;
+    text-align: center;
+    padding: 3vw;
+    color: white;
+    width: 50vw;
+    margin: auto;
+}
+
+.overlay-submitbutton:hover {
+    background-color: #8800EB;
+}
+
+.overlay-submitbutton:active {
+    background-color: #8800EB;
+}
+
+
+
+
+.overlay-textinput {
+    background-color: #4B0082;
+}
+
+.overlay-textinput > input:focus {
+    border-radius: 2vw;
+    border: none;
+}
+
+.overlay-textinput > input {
+    margin-left: 12px;
+    text-align: left;
+    color: white;
+    width: 97%;
+    background-color: transparent;
+    border: none;
+    padding: 1vw;
+    font-family: 'Varela Round', "Ariel Rounded";
+}
+
+
+
+
+.overlay-dropdown {
+    position: relative;
+    border: 4px solid white;
+}
+
+.overlay-dropdown > select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #4B0082;
+    border: 4px solid white;
+    border-radius: 3vw;
+}
+
+/* style arrow */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* style arrow when opened */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style selected option */
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    /* border-color: transparent transparent #4B0082 transparent; */
+    /* background-color: #8800EB; */
+    cursor: pointer;
+}
+
+/* style options */
+.select-items {
+    position: absolute;
+    background-color: #4B0082;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 1px solid transparent;
+    border-radius: 3vw;
+}
+
+.select-hide {
+    display: none;
+  }
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.overlay-mustsee {
+    background-color: #4B0082;
+}
+
+.overlay-mustsee-header {
+    color: white;
+}
+
+.overlay-mustsee-header-text {
+    margin: 1vw;
+}
+
+.overlay-mustsee-header-plus {
+    color: white;
+    background-color: #8800EB;
+    border-radius: 50vw;
+    width: 5vw;
+    height: 5vw;
+    display: block;
+    text-align: center;
+    float: right;
+    position: relative;
+    top: -6vw;
+    right: 1vw;
+}
+
+.must-see-items {
+    max-height: 50vw;
+    /* overflow: scroll; */
+}
+
+.overlay-must-see-input {
+    color: white;
+    width: 97%;
+    background-color: transparent;
+    border: none;
+    padding: 1vw;
+    margin: 0 0 2vw 0;
+    font-family: 'Varela Round', "Ariel Rounded";
+    background-color: #8800EB;
+}
+
+
+
+/* midas deel: */
+
+
+body {
+    height: 100vh;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+section{
+    height: 100%;
+}
+
+header {
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -48%);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    height: 20vh;
+    background-color: #4B0082;
+    border-radius: 0px 0px 40px 40px;
+    -webkit-box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
+    box-shadow: 0px 9px 23px -4px rgba(0,0,0,0.71);
+    text-align: center;
+    font-family: 'Varela Round', 'Roboto';
+}
+
+header h1{
+    margin: 0%;
+    padding: 1vw;
+    color: white;
+    font-size: 300%;
+}
+
+.search-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(17.75%) scale(0.85);
+}
+
+.headinp{
+    float: left;
+    background-color: #8800EB;
+    border: 4px solid white;
+    border-color: white;
+    color: white;
+    border-radius: 2vw 0px 0px 2vw;
+    text-align: left;
+    padding: 4.3px;
+}
+
+.search-block button{
+    float: left;
+    background-color: #8800EB;
+    background-image: url("../images/search_icon.png");
+    background-position: 2px 2px;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 35px;
+    height: 35px;
+    border: 4px solid white;
+    border-radius: 0px 2vw 2vw 0px;
+    cursor: pointer;
+    border-left: none;
+}
+
+.circle{
+    display: flex;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    background-color: #8800EB;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 5vw;
+    margin-top: 5vw;
+
+    border: 4px solid white;
+    border-radius: 50%;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.middel {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none;
+
+}
+
+.buttonContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.buttons {
+    margin: 2vw;
+    pointer-events: all;
+
+}
+
+.buttonicon {
+    width: 13vw;
+}
+
+
+/* luuks ship */
+
+ #landingbody {
+    background: url(../images/bg.png) repeat 60% 0;
+    height: 100vh;
+    overflow: auto;
+    background-size: 210%;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+  background-color: white;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4B0082;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #8800EB;
+}
+
+@keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-webkit-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-moz-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@-o-keyframes bounce {
+  0%, 100% {top: 0px;}
+  50% {top: 20px;}
+}
+@font-face {
+    font-family: "Sonorous";
+    src: url("../style/fonts/Sonorous.otf");
+    src: url("../style/fonts/sonorous-webfont.woff") format("woff");
+}
+.content {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.contentText {
+    font-family: "Sonorous", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    width: 80vw;
+    font-size: 30px;
+    margin: .25rem;
+    padding: .25rem;
+    display: block;
+    text-align: center;
+}
+.content p:not(.button){
+    color: #4B0082;
+}
+
+.button {
+    color: white;
+    background-color: #4B0082;
+    border: 5px solid white;
+    border-radius: 10vw;
+    cursor: pointer;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-property: box-shadow, transform;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.36);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.button:active {
+    background-color: #8800EB;
+}
+.findout {
+  font-size: 20px;
+}
+.generatetext {
+  font-size: 25px;
+}
+#scroll {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  -webkit-animation: bounce 2.5s infinite;
+  -moz-animation:    bounce 2.5s infinite;
+  -o-animation:      bounce 2.5s infinite;
+  animation:         bounce 2.5s infinite;
+}
+#scroll:hover {
+  filter: saturate(2);
+}
+#generatetext {
+  font-size: 10px;
+}
+#firstcontent {
+  transform: scale(0.95);
+}
+#secondcontent {
+  transform: scale(0.75);
+}
+#backtotop {
+  width: inherit;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #4B0082;
+  text-decoration-color: #4B0082;
+  transition-property: box-shadow, transform;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+}
+#backtotop:hover {
+  color: #8800EB;
+  -webkit-text-decoration-color: #8800EB;
+  text-decoration-color: #8800EB;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.quote {
+  width: 70vw;
+}
+.mainquote {
+  font-style: italic;
+  font-size: 22px;
+}
+.subquote {
+  font-weight: lighter;
+  font-size: 18px;
+}
+.linebreak {
+  color: #4B0082;
+  background-color: #4B0082;
+  height: 4px;
+  width: 80vw;
+  border-radius: 20px;
+}
+.infoText {
+  transform: scale(0.9);
+}
+
+
+#map {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+}

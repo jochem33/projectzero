@@ -1,0 +1,109 @@
+/*  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) */
+body, html {
+    height: 100%;
+    overflow: hidden; 
+}
+
+@media only screen and (orientation: landscape) {
+    .overlay-menu {
+        border-radius: 4vw;
+        width: 40vw;
+        /* box-shadow: 100vw 100vw 100vw rgba(0, 0, 0, 1); */
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2), 0 40px 100px 0 rgba(0, 0, 0, 0.19);
+        margin: 5vh 10vw 0 55vw;
+    }
+    
+    .overlay-menu-header {
+        width: 40vw;
+
+        border-radius: 4vw 4vw 0 0;
+    }
+    
+    .overlay-menu-header-close-button {
+        /* color: white;
+        font-size: 11vh;
+        font-family: 'Varela Round', "Ariel Rounded";
+    
+        margin-right: 7vw;
+        position: relative;
+        top: -2vh;
+    
+        font-weight: bold; */
+    }
+    
+    
+    .overlay-item {
+        margin-top: 3vw;
+        width: 30vw;
+    }
+
+    .overlay-items {
+      /* border: 4px solid white;
+      border-radius: 0 0 3vw 3vw; */
+    }
+
+    .overlay-buttondiv {
+        width: 40vw;
+   
+        padding: 0;
+    }
+
+    .overlay-submitbutton {
+
+        width: 25vw;
+
+    }
+    
+    .overlay-submitbutton:hover {
+        /* background-color: #8800EB; */
+    }
+    
+    .overlay-submitbutton:active {
+        /* background-color: #8800EB; */
+    }
+    
+    
+    
+    
+    .overlay-textinput {
+        /* background-color: #4B0082; */
+    }
+    
+    .overlay-textinput > input:focus {
+        /* border-radius: 2vw;
+        border: none; */
+    }
+    
+    .overlay-textinput > input {
+        /* margin-left: 12px;
+        text-align: left;
+        color: white;
+        width: 97%;
+        background-color: transparent;
+        border: none;
+        padding: 1vw;
+        font-family: 'Varela Round', "Ariel Rounded"; */
+    }
+
+    .overlay-mustsee-header-plus {
+        border-radius: 50vw;
+        width: 4vh;
+        height: 4vh;
+        top: -3vw;
+        right: 1vw;
+    }
+
+    .overlay-must-see-input {
+        width: 28vw;
+    }
+
+    .circle{
+        width: 9vh;
+        height: 9vh;
+    }
+
+    .buttonicon {
+        width: 8vh;
+    }
+}
+
